@@ -3,9 +3,9 @@ import { StyleSheet, View, Alert } from 'react-native';
 
 import colors from '../constants/colors';
 import { Text } from '../components/Text';
-import { Button } from '../components/Button';
 import { TextInput } from '../components/Form';
 import { useLogin } from '../util/auth';
+import { Button } from '@/components/Button';
 
 const styles = StyleSheet.create({
   container: {
