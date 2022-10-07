@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Alert } from 'react-native';
+import { StyleSheet, View, Alert, Text } from 'react-native';
 
 import colors from '../constants/colors';
-import { Text } from '../components/Text';
 import { TextInput } from '../components/Form';
 import { useLogin } from '../utils/auth';
 import { Button } from '@/components/Button';
+import { Feather } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,9 +17,11 @@ const styles = StyleSheet.create({
 
 export const TextDemo = () => (
   <View style={styles.container}>
-    <Text type="header">This is a header</Text>
-    <Text type="subheader">This is a subheader</Text>
-    <Text>This is normal text</Text>
+    <Text style={{ fontSize: 24 }}>Text biasa</Text>
+    <Text style={{ fontSize: 24, fontFamily: 'Lato_400Regular' }}>
+      Text biasa lato
+    </Text>
+    <Feather name="home" size={24} color="black" />
   </View>
 );
 
