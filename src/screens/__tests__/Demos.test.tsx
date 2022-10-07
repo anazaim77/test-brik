@@ -4,7 +4,7 @@ import { Alert } from 'react-native';
 import { mocked } from 'ts-jest/utils';
 
 import { TextDemo, ButtonDemo, FormDemo } from '../Demos';
-import { useLogin } from '../../util/auth';
+import { useLogin } from '../../utils/auth';
 
 jest.mock('../../util/auth');
 
