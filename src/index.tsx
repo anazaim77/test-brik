@@ -1,9 +1,9 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 
-import { Main } from './navigation/Main';
 import AppLoading from 'expo-app-loading';
+import AppNavigator from './config/navigation';
 import { useCachedResources } from './hooks';
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Main />
+        <AppNavigator />
       </NavigationContainer>
     </>
   );
