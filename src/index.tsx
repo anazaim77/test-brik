@@ -7,6 +7,7 @@ import AppNavigator from './config/navigation';
 import { useCachedResources } from './hooks';
 import { Provider } from 'react-redux';
 import { store } from './config/store';
+import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
   const { isLoadingComplete, fontsLoaded } = useCachedResources();
@@ -17,10 +18,12 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
-        <StatusBar style="auto" />
-        <NavigationContainer>
-          <AppNavigator />
-        </NavigationContainer>
+        <NativeBaseProvider>
+          <StatusBar style="auto" />
+          <NavigationContainer>
+            <AppNavigator />
+          </NavigationContainer>
+        </NativeBaseProvider>
       </Provider>
     </>
   );
