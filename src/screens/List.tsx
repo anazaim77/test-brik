@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import colors from '../constants/colors';
 import { ListItem, ListSeparator } from '../components/List';
 import { MainStackParams } from '@/config/navigation/type';
 import { useGetAllGoodsQuery } from '@/store/goods/goodQuery';
+import { Colors } from '@/config/theme/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: Colors.base.lightBG,
     paddingVertical: 20,
   },
 });

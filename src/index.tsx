@@ -8,6 +8,7 @@ import { useCachedResources } from './hooks';
 import { Provider } from 'react-redux';
 import { store } from './config/store';
 import { NativeBaseProvider } from 'native-base';
+import { CustomTheme } from './config/theme';
 
 export default function App() {
   const { isLoadingComplete, fontsLoaded } = useCachedResources();
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
-        <NativeBaseProvider>
+        <NativeBaseProvider theme={CustomTheme}>
           <StatusBar style="auto" />
           <NavigationContainer>
             <AppNavigator />
