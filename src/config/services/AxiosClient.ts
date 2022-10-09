@@ -6,7 +6,7 @@ import { showMessage } from 'react-native-flash-message';
 interface InterceptorRequestAxiosRequestConfig extends AxiosRequestConfig {}
 
 const axiosClient = axios.create({
-  baseURL: Config.API_URL,
+  baseURL: Config.BASE_URL,
   responseType: 'json',
   headers: {
     Accept: 'application/json',

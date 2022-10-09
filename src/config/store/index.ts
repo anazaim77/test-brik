@@ -1,10 +1,12 @@
 import { categoryReducer, goodReducer } from '@/store';
+import { goodQuery } from '@/store/goods/goodQuery';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
   reducer: {
     goods: goodReducer,
     categories: categoryReducer,
+    [goodQuery.reducerPath]: goodQuery.reducer,
   },
 });
 

@@ -4,7 +4,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import colors from '../constants/colors';
 import { ListItem, ListSeparator } from '../components/List';
-import { MainStackParams } from '../navigation/Main';
+import { MainStackParams } from '@/config/navigation/type';
+import { useGetAllGoodsQuery } from '@/store/goods/goodQuery';
 
 const styles = StyleSheet.create({
   container: {
@@ -37,6 +38,9 @@ type Props = {
 };
 
 export const List = ({ navigation }: Props) => {
+  const { data, isLoading } = useGetAllGoodsQuery(null);
+  console.log('data', data);
+
   return (
     <FlatList
       style={styles.container}
