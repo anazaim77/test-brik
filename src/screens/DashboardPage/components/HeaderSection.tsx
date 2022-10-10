@@ -11,7 +11,7 @@ import {
   VStack,
 } from 'native-base';
 import * as React from 'react';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Colors } from '@/constants';
 
 interface HeaderSectionProps {}
@@ -36,7 +36,7 @@ const HeaderSection = (props: HeaderSectionProps) => {
         </VStack>
       </HStack>
 
-      <VStack space={5} alignSelf="center" mx={6}>
+      <VStack space={5} alignSelf="center" mx={6} mb={2}>
         <Input
           placeholder="Search"
           width="100%"
@@ -51,6 +51,15 @@ const HeaderSection = (props: HeaderSectionProps) => {
               size="6"
               color="gray.400"
               as={<MaterialIcons name="search" />}
+            />
+          }
+          InputRightElement={
+            <Icon
+              m="2"
+              ml="3"
+              size="5"
+              color="gray.400"
+              as={<MaterialCommunityIcons name="close-circle" />}
             />
           }
         />
