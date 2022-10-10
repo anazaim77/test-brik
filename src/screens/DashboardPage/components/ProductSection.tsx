@@ -34,7 +34,7 @@ const ProductSection = ({
         mb={4}
         borderRadius={15}
       >
-        <Box width={deviceWidth - 219} p={4}>
+        <Box width={deviceWidth - deviceWidth * 0.59} p={4}>
           <Avatar
             bg="purple.600"
             size="xl"
