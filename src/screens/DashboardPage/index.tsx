@@ -10,6 +10,9 @@ interface DashboardPageProps {
 }
 
 const DashboardPage = ({ navigation }: DashboardPageProps) => {
+  const goToAddProduct = () => {
+    navigation.navigate('AddProduct');
+  };
   return (
     <View flex={1} background={'white'}>
       <StatusBar barStyle="dark-content" />
@@ -19,9 +22,12 @@ const DashboardPage = ({ navigation }: DashboardPageProps) => {
         headerComponent={<HeaderSection />}
       />
       <Fab
+        isFocusVisible={false}
+        onPress={goToAddProduct}
         position="absolute"
         size="sm"
         background={'success.400'}
+        renderInPortal={false}
         icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
       />
     </View>

@@ -3,4 +3,5 @@ export type MainStackParams = {
   ProductDetail: {
     id: string;
   };
+  AddProduct: undefined;
 };

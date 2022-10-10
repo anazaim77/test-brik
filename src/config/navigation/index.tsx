@@ -1,3 +1,4 @@
+import AddProductPage from '@/screens/AddProductPage';
 import DashboardPage from '@/screens/DashboardPage';
 import ProductDetailPage from '@/screens/ProductDetailPage';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -30,7 +31,15 @@ const AppNavigator = () => {
           headerShown: true,
           headerBackTitleVisible: false,
           headerTitle: 'Product Detail',
-          headerBackgroundContainerStyle: { borderBottomWidth: 0 },
+        }}
+      />
+      <MainStack.Screen
+        name="AddProduct"
+        component={AddProductPage}
+        options={{
+          headerShown: true,
+          headerBackTitleVisible: false,
+          headerTitle: 'Add New Product',
         }}
       />
     </MainStack.Navigator>
