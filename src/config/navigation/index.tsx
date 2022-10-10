@@ -1,9 +1,16 @@
 import DashboardPage from '@/screens/DashboardPage';
+import ProductDetailPage from '@/screens/ProductDetailPage';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { MainStackParams } from './type';
 
 const MainStack = createStackNavigator<MainStackParams>();
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends MainStackParams {}
+  }
+}
 
 const AppNavigator = () => {
   return (
@@ -14,6 +21,16 @@ const AppNavigator = () => {
         options={{
           header: undefined,
           headerShown: false,
+        }}
+      />
+      <MainStack.Screen
+        name="ProductDetail"
+        component={ProductDetailPage}
+        options={{
+          headerShown: true,
+          headerBackTitleVisible: false,
+          headerTitle: 'Product Detail',
+          headerBackgroundContainerStyle: { borderBottomWidth: 0 },
         }}
       />
     </MainStack.Navigator>
