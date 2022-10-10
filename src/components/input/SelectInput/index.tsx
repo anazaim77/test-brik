@@ -1,29 +1,54 @@
-import { FormControl, Icon, Input, Select } from 'native-base';
-import * as React from 'react';
-import { Entypo } from '@expo/vector-icons';
 import { Colors } from '@/constants';
+import { Entypo } from '@expo/vector-icons';
+import { FormControl, Icon, Select } from 'native-base';
+import * as React from 'react';
 
 interface SelectInputProps {
   label: string;
+  name: string;
+  value?: string | OptionType;
   placeholder?: string;
+  onChange?: (name: string, value: OptionType) => void;
+  option: OptionType[];
 }
 
-const SelectInput = ({ label, placeholder }: SelectInputProps) => {
+export type OptionType = {
+  label: string;
+  value: string;
+  image?: string;
+};
+
+const SelectInput = ({
+  label,
+  placeholder,
+  name,
+  value,
+  onChange,
+  option,
+}: SelectInputProps) => {
   const [service, setService] = React.useState('');
+
+  const _onChange = React.useCallback(
+    (value: string) => {
+      const findItem = option.filter(item => item.value === value);
+      onChange?.(name, findItem?.[0]);
+    },
+    [onChange],
+  );
 
   return (
     <>
       <FormControl.Label>{label}</FormControl.Label>
 
       <Select
-        selectedValue={service}
+        selectedValue={typeof value === 'object' ? value.value : value}
         minWidth="200"
         accessibilityLabel="Choose Service"
         placeholder={placeholder || 'Pick an Item...'}
         borderRadius="10"
         p="3"
         mb={2}
-        onValueChange={itemValue => setService(itemValue)}
+        onValueChange={_onChange}
         dropdownIcon={
           <Icon
             name="chevron-down"
@@ -33,11 +58,13 @@ const SelectInput = ({ label, placeholder }: SelectInputProps) => {
           />
         }
       >
-        <Select.Item label="UX Research" value="ux" />
-        <Select.Item label="Web Development" value="web" />
-        <Select.Item label="Cross Platform Development" value="cross" />
-        <Select.Item label="UI Designing" value="ui" />
-        <Select.Item label="Backend Development" value="backend" />
+        {option.map(({ label, value }, index) => (
+          <Select.Item
+            key={`item-select-${index}`}
+            label={label}
+            value={value}
+          />
+        ))}
       </Select>
     </>
   );

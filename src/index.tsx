@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { store } from './config/store';
 import { NativeBaseProvider } from 'native-base';
 import { CustomTheme } from './config/theme';
+import FlashMessage from 'react-native-flash-message';
 
 export default function App() {
   const { isLoadingComplete, fontsLoaded } = useCachedResources();
@@ -24,6 +25,7 @@ export default function App() {
           <NavigationContainer>
             <AppNavigator />
           </NavigationContainer>
+          <FlashMessage position="bottom" />
         </NativeBaseProvider>
       </Provider>
     </>
