@@ -1,6 +1,6 @@
 ## Overview
 
-This project was created to fulfill the technical test from BRIK. This project completed 6(six) days after the task is received on Oct 6, 2022.
+This project was created to fulfill the technical test from BRIK. This project completed 5(five) days after the task is received on Oct 6, 2022.
 
 ## Prerequites
 
@@ -31,6 +31,7 @@ yarn install
 - React navigation
 - Native base
 - Typescript
+- Sentry
 
 ## Feature
 
@@ -52,4 +53,4 @@ expo start
 
 3. Start on your device
    - press a for android / emulator
-   - press 'i' for iOS / simulator
+   - press i for iOS / simulator
