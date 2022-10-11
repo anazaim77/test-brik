@@ -1,42 +1,55 @@
-# React Native School TypeScript Expo Template
+## Overview
 
-A simple Expo template with the following features:
+This project was created to fulfill the technical test from BRIK. This project completed 6(six) days after the task is received on Oct 6, 2022.
 
-- All TypeScript
-- Eslint & Prettier configured
-- React Navigation v6
-- Testing Configured
-- Simple project structure
-- Small component library to get started with
+## Prerequites
 
-It's easy to create a project, strip out the few components included, and still have the architecture in place to quickly start building an app.
+1. Install yarn
 
-## Usage
-
-> Be sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) installed.
-
-```bash
-expo init --template @react-native-school/expo-typescript-template
+```
+npm i -g yarn
 ```
 
-- Run on iOS: `yarn ios` or `npm run ios`
-- Run on Android: `yarn android` or `npm run android`
-- Run on Web: `yarn web` or `npm run web`
-- Compile TypeScript: `yarn tsc`
-- Run Tests: `yarn test` or `npm run test`
-- Lint Code: `yarn lint` or `npm run lint`
-- Format Code: `yarn format` or `npm run format`
+2. Install expo cli
 
-## Screenshots
+```
+npm i -g expo-cli
+```
 
-List Screen
-![List Screen](./assets/screenshots/list.png)
+3. Install dependencies
 
-Text Screen
-![Text Screen](./assets/screenshots/text.png)
+```
+yarn install
+```
 
-Form Screen
-![Form Screen](./assets/screenshots/form.png)
+## Technologies
 
-Button Screen
-![Button Screen](./assets/screenshots/button.png)
+- React native
+- Expo
+- Redux toolkit
+- RTK Query
+- React navigation
+- Native base
+- Typescript
+
+## Feature
+
+- Product List
+- Product Detail
+- Add product form
+- Search product list
+
+## Run on android / iOS
+
+1. Connect your device / simulator / emulator
+2. Start development server
+
+```
+yarn start
+// or
+expo start
+```
+
+3. Start on your device
+   - press a for android / emulator
+   - press 'i' for iOS / simulator
