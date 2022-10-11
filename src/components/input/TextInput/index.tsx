@@ -1,3 +1,4 @@
+import { Colors } from '@/constants';
 import { Ionicons } from '@expo/vector-icons';
 import { FormControl, Icon, Input } from 'native-base';
 import * as React from 'react';
@@ -41,6 +42,7 @@ const TextInput = ({
           p="3"
           fontSize="14"
           keyboardType={keyboardType}
+          placeholderTextColor={Colors.font.secondary}
           onChangeText={_onChange}
         />
         <FormControl.ErrorMessage

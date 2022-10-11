@@ -1,6 +1,7 @@
 import { Colors } from '@/constants';
 import { IGood } from '@/store/goods/good.type';
 import { useGetAllGoodsQuery } from '@/store/goods/goodQuery';
+import { DataUtils } from '@/utils';
 import { deviceWidth } from '@/utils/AppUtils';
 import { NavigationProp } from '@react-navigation/native';
 import {
@@ -18,11 +19,13 @@ import { RefreshControl } from 'react-native';
 interface ProductSectionProps {
   headerComponent: React.ReactElement;
   navigation: NavigationProp<any>;
+  query: string;
 }
 
 const ProductSection = ({
   headerComponent,
   navigation,
+  query,
 }: ProductSectionProps) => {
   const { data, refetch, isLoading } = useGetAllGoodsQuery(null);
 
@@ -67,7 +70,7 @@ const ProductSection = ({
         paddingHorizontal: 24,
       }}
       numColumns={2}
-      data={data}
+      data={DataUtils.searchFind(data, query)}
       renderItem={renderItem}
       windowSize={11}
       refreshControl={

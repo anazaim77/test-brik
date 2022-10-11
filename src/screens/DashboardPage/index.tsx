@@ -10,16 +10,21 @@ interface DashboardPageProps {
 }
 
 const DashboardPage = ({ navigation }: DashboardPageProps) => {
+  const [query, setQuery] = React.useState<string>('');
   const goToAddProduct = () => {
     navigation.navigate('AddProduct');
   };
+
   return (
     <View flex={1} background={'white'}>
       <StatusBar barStyle="dark-content" />
       <Box safeAreaTop bg="white" />
       <ProductSection
         navigation={navigation}
-        headerComponent={<HeaderSection />}
+        query={query}
+        headerComponent={
+          <HeaderSection query={query} onChangeQuery={setQuery} />
+        }
       />
       <Fab
         isFocusVisible={false}

@@ -14,9 +14,12 @@ import * as React from 'react';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Colors } from '@/constants';
 
-interface HeaderSectionProps {}
+interface HeaderSectionProps {
+  onChangeQuery: (text: string) => void;
+  query: string;
+}
 
-const HeaderSection = (props: HeaderSectionProps) => {
+const HeaderSection = ({ onChangeQuery, query }: HeaderSectionProps) => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -44,6 +47,9 @@ const HeaderSection = (props: HeaderSectionProps) => {
           py="3"
           px="1"
           fontSize="14"
+          onChangeText={(text: string) => onChangeQuery(text)}
+          placeholderTextColor={Colors.font.secondary}
+          value={query}
           InputLeftElement={
             <Icon
               m="2"
@@ -54,13 +60,16 @@ const HeaderSection = (props: HeaderSectionProps) => {
             />
           }
           InputRightElement={
-            <Icon
-              m="2"
-              ml="3"
-              size="5"
-              color="gray.400"
-              as={<MaterialCommunityIcons name="close-circle" />}
-            />
+            query ? (
+              <Icon
+                m="2"
+                ml="3"
+                size="5"
+                color="gray.400"
+                as={<MaterialCommunityIcons name="close-circle" />}
+                onPress={() => onChangeQuery('')}
+              />
+            ) : undefined
           }
         />
       </VStack>

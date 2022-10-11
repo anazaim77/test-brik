@@ -45,6 +45,7 @@ const SelectInput = ({
         minWidth="200"
         accessibilityLabel="Choose Service"
         placeholder={placeholder || 'Pick an Item...'}
+        placeholderTextColor={Colors.font.secondary}
         borderRadius="10"
         p="3"
         mb={2}
@@ -57,6 +58,7 @@ const SelectInput = ({
             as={<Entypo name="chevron-down" color={Colors.font.secondary} />}
           />
         }
+        fontSize={'sm'}
       >
         {option.map(({ label, value }, index) => (
           <Select.Item
